@@ -1,24 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
+// app-routing.module.ts
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { SaleComponent } from './pages/sale/sale.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CartComponent } from './cart/cart.component';
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'sale', component: SaleComponent },
+  // Add other routes as needed
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    CartComponent
-    // Add other components, directives, or pipes here
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule // Fix the import statement
-    // Add other modules here
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [RouterModule.forRoot(routes)]
+
 })
-export class AppModule { }
+export class AppRoutingModule { }
